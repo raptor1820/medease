@@ -1,0 +1,54 @@
+---
+import PDFUploadWithTemplates from '../srcForDashboard/pdf-upload.tsx'
+import { Users, Calendar, Clipboard, FileText, Shield } from 'lucide-react'
+---
+
+<html lang="en">
+  <head>
+    <title>Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/styles/global.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white font-sans">
+      <!-- Navigation Bar -->
+      <nav class="bg-gray-800 text-white p-4">
+        <div class="mx-auto flex justify-between items-center">
+          <div class="text-lg font-bold">My Dashboard</div>
+          <div class="space-x-4">
+            <a href="/dashboard" class="hover:underline">Account Info</a>
+            <a href="/dashboard" class="hover:underline">Settings</a>
+            <a href="/login" class="hover:underline">Logout</a>
+          </div>
+        </div>
+      </nav>
+      <!-- Main Content with Sidebar -->
+      <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-78 bg-gray-600 p-2">
+          <nav class="space-y-6">
+            <a href="/dashboard" class="block text-gray-200 hover:bg-gray-700 p-2 rounded flex justify-start">
+              <Users class="mr-4 h-5 w-5" />&nbsp;&nbsp;&nbsp;Patients
+            </a>
+            <a href="/dashboard" class="block text-gray-200 hover:bg-gray-700 p-2 rounded flex justify-start">
+              <Calendar class="mr-4 h-5 w-5" />&nbsp;&nbsp;&nbsp; Appointments
+            </a>
+            <a href="/dashboard" class="block text-gray-200 hover:bg-gray-700 p-2 rounded flex justify-start">
+              <Clipboard class="mr-4 h-5 w-5" /> &nbsp;&nbsp;&nbsp;Patient Prescription Plans
+            </a>
+            <a href="/dashboard" class="block text-gray-200 hover:bg-gray-700 p-2 rounded flex justify-start">
+              <FileText class="mr-4 h-5 w-5" />&nbsp;&nbsp;&nbsp; Patient Health Records
+            </a>
+            <a href="/dashboard" class="block text-gray-200 hover:bg-gray-700 p-2 rounded flex justify-start">
+              <Shield class="mr-4 h-5 w-5" /> &nbsp;&nbsp;&nbsp;Patient Insurance Plans
+            </a>
+          </nav>
+        </aside>
+  
+        <!-- Main Content Area -->
+        <main class="flex-1 p-6">
+          <PDFUploadWithTemplates client:load/>
+        </main>
+      </div>
+  </body>
+</html>
